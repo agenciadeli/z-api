@@ -6,7 +6,7 @@ categories: ["communication", "messaging"]
 
 auth_schemes:
   - name: zapi_api_key
-    display_name: "Z-API API Key Authentication"
+    display_name: "Z-API API Key Authentication"  # Adicionando display_name aqui
     auth_mode: API_KEY
     proxy:
       base_url: "{{base_url}}"
