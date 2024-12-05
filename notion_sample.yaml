@@ -16,6 +16,5 @@ auth_schemes:
         type: string
 proxy:
   base_url: https://api.z-api.io
-"""
 
 
