@@ -7,7 +7,7 @@ docs: "https://z-api.io/docs"
 
 auth_schemes:
   - name: zapi_api_key
-    display_name: "Z-API API Key Authentication"  # Adicionado o display_name
+    display_name: "Z-API API Key Authentication" 
     auth_mode: API_KEY
     proxy:
       base_url: "{{base_url}}"
@@ -16,13 +16,13 @@ auth_schemes:
     fields:
       - name: api_key
         expected_from_customer: true
-        display_name: "API Key"  # Adicionado o display_name
+        display_name: "API Key" 
         description: "Your API key for authentication."
         type: string
         required: true
       - name: base_url
         expected_from_customer: true
-        display_name: "Base URL"  # Adicionado o display_name
+        display_name: "Base URL" 
         description: "The base URL for the Z-API instance."
         type: string
         required: false
