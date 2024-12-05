@@ -1,0 +1,18 @@
+name: Z-API
+description: Integrate Z-API to send WhatsApp messages directly from Composio.
+logo: https://z-api.io/logo.png
+categories: ["communication", "messaging"]
+auth_schemes:
+  - name: zapi_token
+    auth_mode: API-CHAVE
+    fields:
+      - name: instance_id
+        displayName: Instance ID
+        description: "The ID of the Z-API instance."
+        type: string
+      - name: token
+        displayName: Token
+        description: "The API token for authentication."
+        type: string
+proxy:
+  base_url: https://api.z-api.io
