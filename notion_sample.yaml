@@ -13,7 +13,7 @@ auth_schemes:
     fields:
       - name: api_key
         expected_from_customer: true
-        displayName: API Key
+        displayName: Z-API
         description: "The API key for Z-API integration."
         type: string
         required: true
