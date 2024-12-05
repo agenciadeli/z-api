@@ -1,20 +1,26 @@
-- name: zapi
-  auth_mode: API_KEY
-  proxy:
-    base_url: "{{base_url}}"
-    headers:
-      Authorization: "{{api_key}}"
-  fields:
-    - name: api_key
-      expected_from_customer: true 
-      displayName: Z-API Key
-      description: "Chave de autenticação para acessar a API da Z-API"
-      type: string
-      required: true
-    - name: base_url
-      expected_from_customer: true 
-      displayName: Base URL da Z-API
-      description: "URL base para os endpoints da Z-API"
-      type: string
-      required: false
-      default: "https://api.z-api.io/v1"
+name: Z-API
+unique_key: zapi_integration
+description: Integrate Z-API to send WhatsApp messages directly from Composio.
+logo: https://z-api.io/logo.png
+categories: ["communication", "messaging"]
+auth_schemes:
+  - name: zapi_api_key
+    auth_mode: API_KEY
+    proxy:
+      base_url: "{{base_url}}"
+      headers:
+        Authorization: "{{api_key}}"
+    fields:
+      - name: api_key
+        expected_from_customer: true
+        displayName: Z-API Key
+        description: "The API key for Z-API integration."
+        type: string
+        required: true
+      - name: base_url
+        expected_from_customer: true
+        displayName: Base URL
+        description: "The base URL for the Z-API instance."
+        type: string
+        required: false
+        default: https://api.z-api.io
