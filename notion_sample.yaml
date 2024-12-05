@@ -5,7 +5,7 @@ logo: https://z-api.io/logo.png
 categories: ["communication", "messaging"]
 auth_schemes:
   - name: zapi_api_key
-    display_name: API Key
+    display_name: Z-api
     auth_mode: API_KEY
     proxy:
       base_url: "{{base_url}}"
@@ -14,7 +14,7 @@ auth_schemes:
     fields:
       - name: api_key
         expected_from_customer: true
-        displayName: API Key
+        displayName: Z-api
         description: "The API key for Z-API integration."
         type: string
         required: true
