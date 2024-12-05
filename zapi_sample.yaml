@@ -6,22 +6,22 @@ categories: ["communication", "messaging"]
 
 auth_schemes:
   - name: zapi_api_key
-    display_name: zapi api key
+    display_name: "Z-API API Key Authentication"
     auth_mode: API_KEY
     proxy:
       base_url: "{{base_url}}"
       headers:
-        Authorization: "{{api_key}}"
+        Authorization: "Bearer {{api_key}}"
     fields:
       - name: api_key
         expected_from_customer: true
-        displayName: API Key
+        displayName: "API Key"
         description: "The API key for authenticating with Z-API."
         type: string
         required: true
       - name: base_url
         expected_from_customer: true
-        displayName: Base URL
+        displayName: "Base URL"
         description: "The base URL for the Z-API instance."
         type: string
         required: false
