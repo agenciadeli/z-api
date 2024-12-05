@@ -1,5 +1,3 @@
-# Criar o arquivo `integrations.yaml` para a integração da Z-API com o Composio
-integrations_yaml_content = """
 name: Z-API
 description: Integrate Z-API to send WhatsApp messages directly from Composio.
 logo: https://z-api.io/logo.png
