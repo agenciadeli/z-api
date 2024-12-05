@@ -25,34 +25,3 @@ auth_schemes:
         type: string
         required: true
         default: https://api.z-api.io
-actions:
-  - name: send_message
-    display_name: Send Message
-    description: Send a WhatsApp message using Z-API.
-    endpoint: /instances/{{instance_id}}/token/{{api_key}}/send-text
-    method: POST
-    fields:
-      - name: instance_id
-        expected_from_customer: true
-        displayName: Instance ID
-        description: "The unique instance ID for Z-API."
-        type: string
-        required: true
-      - name: api_key
-        expected_from_customer: true
-        displayName: API Key
-        description: "The API key for Z-API integration."
-        type: string
-        required: true
-      - name: recipient
-        expected_from_customer: true
-        displayName: Recipient
-        description: "The phone number of the recipient (including country code)."
-        type: string
-        required: true
-      - name: message
-        expected_from_customer: true
-        displayName: Message
-        description: "The text message to send."
-        type: string
-        required: true
