@@ -6,7 +6,7 @@ categories: ["communication", "messaging"]
 
 auth_schemes:
   - name: zapi_api_key
-    display_name: "Z-API API Key Authentication"  # Adicionando display_name aqui
+    display_name: "Z-API API Key Authentication"  # display_name na autenticação
     auth_mode: API_KEY
     proxy:
       base_url: "{{base_url}}"
@@ -26,3 +26,35 @@ auth_schemes:
         type: string
         required: false
         default: "https://api.z-api.io"
+
+actions:
+  - name: send_message
+    display_name: "Send WhatsApp Message Action"  # display_name na ação
+    description: "Send a WhatsApp message using Z-API."
+    endpoint: "/instances/{{instance_id}}/token/{{api_key}}/send-text"
+    method: POST
+    fields:
+      - name: instance_id
+        expected_from_customer: true
+        displayName: "Instance ID"
+        description: "The unique instance ID for Z-API."
+        type: string
+        required: true
+      - name: api_key
+        expected_from_customer: true
+        displayName: "API Key"
+        description: "The API key for Z-API integration."
+        type: string
+        required: true
+      - name: recipient
+        expected_from_customer: true
+        displayName: "Recipient"
+        description: "The phone number of the recipient (including country code)."
+        type: string
+        required: true
+      - name: message
+        expected_from_customer: true
+        displayName: "Message"
+        description: "The text message to send."
+        type: string
+        required: true
