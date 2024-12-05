@@ -1,4 +1,5 @@
 name: Z-API
+unique_key: zapi
 description: Integrate Z-API to send WhatsApp messages directly from Composio.
 logo: https://z-api.io/logo.png
 categories: ["communication", "messaging"]
