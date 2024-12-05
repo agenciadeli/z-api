@@ -1,42 +1,23 @@
+# Criar o arquivo `integrations.yaml` para a integração da Z-API com o Composio
+integrations_yaml_content = """
 name: Z-API
-unique_key: zapi
-docs: https://z-api.io/documentation
-description: API para envio de mensagens no WhatsApp através da Z-API.
-logo: https://z-api.io/assets/logo.png
-categories: [messaging, communication]
-get_current_user_endpoint: /instances/{{instance_id}}/token/{{token}}/status
+description: Integrate Z-API to send WhatsApp messages directly from Composio.
+logo: https://z-api.io/logo.png
+categories: ["communication", "messaging"]
 auth_schemes:
-  - name: zapi_instance_token
-    auth_mode: API_KEY
-    proxy:
-      base_url: https://api.z-api.io
-      headers:
-        Instance-ID: "{{instance_id}}"
-        Authorization: "Bearer {{token}}"
+  - name: zapi_token
+    auth_mode: API-CHAVE
     fields:
       - name: instance_id
-        expected_from_customer: true
-        display_name: Instance ID
-        description: "O ID da sua instância Z-API. Você pode obtê-lo no painel da Z-API."
+        displayName: Instance ID
+        description: "The ID of the Z-API instance."
         type: string
-        required: true
       - name: token
-        expected_from_customer: true
-        display_name: Token
-        description: "Seu token de instância para autenticação. Disponível no painel da Z-API."
+        displayName: Token
+        description: "The API token for authentication."
         type: string
-        required: true
-      - name: security_token
-        expected_from_customer: false
-        display_name: Token de Segurança
-        description: "Token adicional de segurança para garantir autenticação segura."
-        type: string
-        required: false
-api_tags:
-  - name: SendMessage
-    description: "Endpoint para envio de mensagens de texto no WhatsApp."
-    tags: ["messaging", "whatsapp"]
-    proxy:
-      endpoint: /instances/{{instance_id}}/token/{{token}}/send-text
-      method: POST
+proxy:
+  base_url: https://api.z-api.io
+"""
+
 
