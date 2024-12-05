@@ -3,10 +3,11 @@ unique_key: zapi_integration
 description: Integrate Z-API to send WhatsApp messages directly from Composio.
 logo: https://z-api.io/logo.png
 categories: ["communication", "messaging"]
+docs: "https://z-api.io/docs"
 
 auth_schemes:
   - name: zapi_api_key
-    display_name: "Z-API API Key Authentication"  # display_name na autenticação
+    display_name: "Z-API API Key Authentication"  # Adicionado o display_name
     auth_mode: API_KEY
     proxy:
       base_url: "{{base_url}}"
@@ -15,46 +16,14 @@ auth_schemes:
     fields:
       - name: api_key
         expected_from_customer: true
-        displayName: "API Key"
-        description: "The API key for authenticating with Z-API."
+        display_name: "API Key"  # Adicionado o display_name
+        description: "Your API key for authentication."
         type: string
         required: true
       - name: base_url
         expected_from_customer: true
-        displayName: "Base URL"
+        display_name: "Base URL"  # Adicionado o display_name
         description: "The base URL for the Z-API instance."
         type: string
         required: false
         default: "https://api.z-api.io"
-
-actions:
-  - name: send_message
-    display_name: "Send WhatsApp Message Action"  # display_name na ação
-    description: "Send a WhatsApp message using Z-API."
-    endpoint: "/instances/{{instance_id}}/token/{{api_key}}/send-text"
-    method: POST
-    fields:
-      - name: instance_id
-        expected_from_customer: true
-        displayName: "Instance ID"
-        description: "The unique instance ID for Z-API."
-        type: string
-        required: true
-      - name: api_key
-        expected_from_customer: true
-        displayName: "API Key"
-        description: "The API key for Z-API integration."
-        type: string
-        required: true
-      - name: recipient
-        expected_from_customer: true
-        displayName: "Recipient"
-        description: "The phone number of the recipient (including country code)."
-        type: string
-        required: true
-      - name: message
-        expected_from_customer: true
-        displayName: "Message"
-        description: "The text message to send."
-        type: string
-        required: true
